@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Transfer Money | Our Bank
+    </title>
+
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="./Scripts/angular.1.7.8.js"></script>
+    <script src="./Scripts/_mybankAPIgateway.js"></script>
+
+</head>
+
+<body ng-app="_mybankAPIgateway" ng-controller="_mybankAPIgatewayController">
+
+    <div id="container">
+        <div id="header">
+            <ul style="display:inline">
+                <li>
+                    <a class="active" href="Homepage.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <img src="https://img.icons8.com/nolan/64/bank-building.png" />
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="heading">
+        Welcome to Money transfer Section!!!
+    </div>
+
+<form id="frm" name="frm">
+
+        <div align=center>
+
+            <hr> from account: &nbsp;<input id="fromaccount" type="text" name="fromaccount" ng-model="form.moneytransfer.fromaccount" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to account: &nbsp;<input id="toaccount" type="text" name="toaccount" ng-model="form.moneytransfer.toaccount" />
+			amount: &nbsp;<input id="amount" type="text" name="amount" ng-model="form.moneytransfer.amount" />
+            <hr>
+            <br>
+            <button name="btnselect" ng-click="data.moneytransfer.selectquery();">Read</button> &nbsp;&nbsp;
+            
+            <button name="btninsert" ng-click="data.moneytransfer.insertquery();">Create</button>
+
+        </div>
+
+        <br>
+        <hr>
+
+        <div align=center>
+            <h1><br><b>Money transfer LIST</b></h1>
+            <br>
+
+            <table align="center">
+
+                <tr>
+                    <td align="center">ID</td>
+                    <td align="center">FROM ACCOUNT</td>
+                    <td align="center">TO ACCOUNT</td>
+                    <td align="center">AMOUNT</td>
+
+                </tr>
+                <tr>
+                    <td colspan=100%>
+                        <hr>
+                    </td>
+                </tr>
+                <tr style="color:blue;" ng-repeat="moneytransfer in data.queryresponse">
+                    <td align="center">{{moneytransfer._ID}}</td>
+                    <td align="center">{{moneytransfer.fromaccount}}</td>
+                    <td align="center">{{moneytransfer.toaccount}}</td>
+                    <td align="center">{{moneytransfer.amount}}</td>
+
+                </tr>
+
+            </table>
+        </div>
+
+        
+    </form>
+    <div id="footer">
+        Project Done by Team ADITYA
+    </div>
+</body>
+
+</html>

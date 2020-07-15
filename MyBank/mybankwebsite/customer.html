@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Customer | Our Bank
+    </title>
+
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="./Scripts/angular.1.7.8.js"></script>
+    <script src="./Scripts/_mybankAPIgateway.js"></script>
+
+
+</head>
+
+<body ng-app="_mybankAPIgateway" ng-controller="_mybankAPIgatewayController">
+
+    <div id="container">
+        <div id="header">
+            <ul style="display:inline">
+                <li>
+                    <a class="active" href="Homepage.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <img src="https://img.icons8.com/nolan/64/bank-building.png" />
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="heading">
+        Welcome to Customer Section!!!
+    </div>
+
+    <form id="frm" name="frm">
+			
+			<div align=center>    
+				
+				<hr>
+				Customer ID: &nbsp;<input id="customerid" type="text" name="customerid" ng-model="form.customer._ID" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				Customer Name: &nbsp;<input id="customername" type="text" name="customername" ng-model="form.customer.name" />
+				<hr>
+				<br>
+				<button name="btnselect" ng-click="data.customer.selectquery();">Read</button>
+				&nbsp;&nbsp;
+				<button name="btnupdate" ng-click="data.customer.updatequery();">Update</button>
+				&nbsp;&nbsp;
+				<button name="btndelete" ng-click="data.customer.deletequery();">Delete</button>
+				&nbsp;&nbsp;
+				<button name="btninsert" ng-click="data.customer.insertquery();">Create</button>
+				
+			</div>
+	
+	<br>
+	<hr>
+	
+	<div align=center>
+		<br><b>CUSTOMER LIST</b>
+		<br>
+
+		<table align="center">
+		
+			<tr>
+				<td align="center">ID</td>
+				<td align="center">NAME</td>
+				<td align="center">ADDRESS</td>
+				<td align="center">PHONE</td>
+				<td align="center">TYPE</td>
+			</tr>
+			<tr><td colspan=100%><hr></td></tr>
+			<tr style="color:blue;" ng-repeat="customer in data.queryresponse">
+				<td align="center">{{customer._ID}}</td>
+				<td align="center">{{customer.customername}}</td>
+				<td align="center">{{customer.customeraddress}}</td>
+				<td align="center">{{customer.customerphone}}</td>
+				<td align="center">{{customer.customertype}}</td>
+			</tr>
+			
+		</table>
+	</div>
+
+	<div align=center>
+		<br>
+		<hr>
+		<a href="mybank.html">Back to Main Menu</a>
+	</div>
+
+			<div id="debug" ng-show="1==0" style="background-color:grey;color:white;">
+			<br>DEBUG
+				<br>query: {{data.query}}
+				<br>querytype: {{data.querytype}}
+				<br>fired query status: {{msg}}
+				
+			</div>
+
+    <div id="footer">
+        Project Done by Team
+    </div>
+
+</body>
+
+</html>

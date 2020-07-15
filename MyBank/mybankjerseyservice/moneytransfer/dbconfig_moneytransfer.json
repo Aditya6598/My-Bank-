@@ -1,0 +1,12 @@
+{
+		"softwarefolder":"D:\\Projects\\Laptop_Project\\MyBank\\",
+		"websitefolder":"D:\\Projects\L\aptop_Project\\MyBank\\mybankwebsite\\",
+		"databasename":"dbmoneytransfer",
+		"databaseusername":"root",
+		"databasepassword":"aditya"	,
+		"databasetestquery":"SELECT CONCAT(  '[',  GROUP_CONCAT(JSON_OBJECT('_id', _id)), ']') as jsonresult from tEvents;",
+		"services":[
+					 {"uri":"http://localhost:8082/myapp/account/syncevent"},
+					 {"uri":"http://localhost:8083/myapp/moneytransfer/syncevent"}
+					]
+}

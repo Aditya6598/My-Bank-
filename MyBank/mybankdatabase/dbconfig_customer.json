@@ -1,0 +1,8 @@
+{
+    "softwarefolder":"D:\\Projects\\Laptop_Project\\MyBank\\",
+    "websitefolder":"D:\\Projects\\Laptop_Project\\MyBank\\mybankwebsite\\",
+    "databasename":"dbCustomer",
+    "databaseusername":"root",
+    "databasepassword":"aditya"	,
+    "databasetestquery":"SELECT CONCAT(  '[',  GROUP_CONCAT(JSON_OBJECT('_id', _id)), ']') as jsonresult from tAccount;"
+}
